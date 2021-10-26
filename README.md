@@ -1,5 +1,7 @@
 # Jiro's huiswerk
 
+Originele repo: https://github.com/hogeschoolnovi/frontend-javascript-tech-it-easy
+
 ## Opdrachtbeschrijving: Inleiding
 
 Je bent net begonnen als developer bij een bedrijf genaamd _Tech It Easy_, dat TV's verkoopt. Recentelijk hebben ze Fred
