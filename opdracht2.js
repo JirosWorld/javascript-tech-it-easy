@@ -1,171 +1,52 @@
-// VOORRAAD ARRAY MET TV'S
-const inventory = [
-    {
-        type: '43PUS6504/12',
-        name: '4K TV',
-        brand: 'Philips',
-        price: 379,
-        availableSizes: [43, 50, 58, 65],
-        refreshRate: 50,
-        screenType: 'LED',
-        screenQuality: 'Ultra HD/4K',
-        smartTv: true,
-        options: {
-            wifi: true,
-            speech: false,
-            hdr: true,
-            bluetooth: false,
-            ambiLight: false,
-        },
-        originalStock: 23,
-        sold: 2,
-    },
-    {
-        type: 'NH3216SMART',
-        name: 'HD smart TV',
-        brand: 'Nikkei',
-        price: 159,
-        availableSizes: [32],
-        refreshRate: 100,
-        screenType: 'LED',
-        screenQuality: 'HD ready',
-        smartTv: true,
-        options: {
-            wifi: true,
-            speech: false,
-            hdr: false,
-            bluetooth: false,
-            ambiLight: false,
-        },
-        originalStock: 4,
-        sold: 4,
-    },
-    {
-        type: 'QE55Q60T',
-        name: '4K QLED TV',
-        brand: 'Samsung',
-        price: 709,
-        availableSizes: [43, 50, 55, 58, 65],
-        refreshRate: 60,
-        screenType: 'QLED',
-        screenQuality: 'Ultra HD/4K',
-        smartTv: true,
-        options: {
-            wifi: true,
-            speech: true,
-            hdr: true,
-            bluetooth: true,
-            ambiLight: false,
-        },
-        originalStock: 7,
-        sold: 0,
-    },
-    {
-        type: '43HAK6152',
-        name: 'Ultra HD SMART TV',
-        brand: 'Hitachi',
-        price: 349,
-        availableSizes: [43, 50, 55, 58],
-        refreshRate: 60,
-        screenType: 'LCD',
-        screenQuality: 'Ultra HD/4K',
-        smartTv: true,
-        options: {
-            wifi: true,
-            speech: true,
-            hdr: true,
-            bluetooth: true,
-            ambiLight: false,
-        },
-        originalStock: 5,
-        sold: 5,
-    },
-    {
-        type: '50PUS7304/12',
-        name: 'The One 4K TV',
-        brand: 'Philips',
-        price: 479,
-        availableSizes: [43, 50, 55, 58, 65, 70],
-        refreshRate: 50,
-        screenType: 'LED',
-        screenQuality: 'Ultra HD/4K',
-        smartTv: true,
-        options: {
-            wifi: true,
-            speech: true,
-            hdr: true,
-            bluetooth: true,
-            ambiLight: true,
-        },
-        originalStock: 8,
-        sold: 3,
-    },
-    {
-        type: '55PUS7805',
-        name: '4K LED TV',
-        brand: 'Philips',
-        price: 689,
-        availableSizes: [55],
-        refreshRate: 100,
-        screenType: 'LED',
-        screenQuality: 'Ultra HD/4K',
-        smartTv: true,
-        options: {
-            wifi: true,
-            speech: false,
-            hdr: true,
-            bluetooth: false,
-            ambiLight: true,
-        },
-        originalStock: 6,
-        sold: 3,
-    },
-    {
-        type: 'B2450HD',
-        name: 'LED TV',
-        brand: 'Brandt',
-        price: 109,
-        availableSizes: [24],
-        refreshRate: 60,
-        screenType: 'LED',
-        screenQuality: 'Full HD',
-        smartTv: false,
-        options: {
-            wifi: false,
-            speech: false,
-            hdr: false,
-            bluetooth: false,
-            ambiLight: false,
-        },
-        originalStock: 10,
-        sold: 8,
-    },
-    {
-        type: '32WL1A63DG',
-        name: 'HD TV',
-        brand: 'Toshiba',
-        price: 161,
-        availableSizes: [32],
-        refreshRate: 50,
-        screenType: 'LED',
-        screenQuality: 'Full HD',
-        smartTv: false,
-        options: {
-            wifi: false,
-            speech: false,
-            hdr: true,
-            bluetooth: false,
-            ambiLight: false,
-        },
-        originalStock: 10,
-        sold: 8,
-    },
-];
+// pseudocode: de voorraad staat in het Main JS bestand.
 
 // Opdracht 2a: Hoeveel tv's zijn er al verkocht? Schrijf een script dat dit berekent. Log de uitkomst in de console.
 // pseudocode: (Aantal verkocht) = (sold), maar dan geloopt/opgeteld over álle objecten
+// pseudocode: De for-loop wordt gebruikt om een array te itereren. We kunnen de loop gebruiken om alle getallen in een array op te tellen en op te slaan in een variabele.
+// pseudocode: We initialiseren een variabele som (sumSold) = 0 om het resultaat op te slaan, en gebruiken de for-lus om elk element te 'bezoeken' en toe te voegen aan de som van de array:
+
+let sumSold = 0;
+
+for (let i = 0; i < inventory.length; i++) {
+    sumSold += inventory[i].sold;
+}
+console.log("Verkocht totaal:" + sumSold + ".");
 
 // Opdracht 2b: Zorg ervoor dat dit aantal in het groen wordt weergegeven op de pagina.
+// pseudocode: maak eerst tags in het HTML bestand, waarvan 1 een ID='totalsold' heeft
+// om deze variabele te tonen in de HTML, gebruik ik de .textContent methode
+const totalsold_Dashboard = document.getElementById("totalsold");
+console.log(totalsold_Dashboard);
+totalsold_Dashboard.textContent = sumSold + ".";
+
+
 // Opdracht 2c: Hoeveel tv's heeft Tech It Easy ingekocht? Schrijf een script dat dit berekent. Log de uitkomst in de console.
+// pseudocode: (Aantal ingekocht) = (originalStock), maar dan geloopt/opgeteld over álle objecten
+// pseudocode: ik gebruik weer een For Loop om de aantallen in 1 variabele op te slaan
+
+let sumBoughtStock = 0;
+
+for (let i = 0; i < inventory.length; i++) {
+    sumBoughtStock += inventory[i].originalStock;
+}
+console.log("Ingekochte voorraad:",sumBoughtStock);
+
 // Opdracht 2d: Zorg ervoor dat dit aantal in het blauw wordt weergegeven op de pagina.
+// pseudocode: maak eerst tags in het HTML bestand, waarvan 1 een ID='totalsold' heeft
+// om deze variabele te tonen in de HTML, gebruik ik de .textContent methode
+const boughtstock_Dashboard = document.getElementById("boughtstock");
+console.log(boughtstock_Dashboard);
+boughtstock_Dashboard.textContent = sumBoughtStock + ".";
+
+
 // Opdracht 2e: Geef in het rood weer hoeveel tv's er nog verkocht moeten worden.
+// pseudocode: het aantal TV's dat nog verkocht moet worden = sumBoughtStock - sumSold
+
+const remainingToBeSold = sumBoughtStock - sumSold;
+
+// om deze variabele te tonen in de HTML, gebruik ik nu als extra oefening de innerHTML manier, hoewel die eigenlijk niet mag,
+// maar uiteraard kan dit ook met de .textContent methode
+const remains_Dashboard = document.getElementById("remains");
+remains_Dashboard.innerHTML = `
+    <span>Het aantal TV's dat nog verkocht moet worden: <em>${remainingToBeSold}.</em></span>
+`;
