@@ -1,6 +1,6 @@
-# Opdrachtbeschrijving
+# Jiro's huiswerk
 
-## Inleiding
+## Opdrachtbeschrijving: Inleiding
 
 Je bent net begonnen als developer bij een bedrijf genaamd _Tech It Easy_, dat TV's verkoopt. Recentelijk hebben ze Fred
 van financieën ontslagen omdat hij telkens wel online was op Teams, maar eigenlijk dutjes deed en niets uitvoerde. Dit
