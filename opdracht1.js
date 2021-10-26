@@ -180,6 +180,7 @@ console.log('* TV naam: (8 resultaten)',output1a_name);
 // Opdracht 1b: Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die volledig uitverkocht zijn. Log de uitkomst in de console.
 // pseudocode: we willen resultaten filteren waar meerdere waarden getoond worden, dus: Filter methode
 // let op: hier komt een lijst van 'hele' objecten uit met alle eigenschappen
+// Uitverkocht = originalStock - sold, dus: die objectkeys/methoden moet je aanroepen en met elkaar in een formule stoppen zodat de objectvalues vanelkaar worden afgetrokken:
 const output1b = inventory.filter((stock) => {
     if ((stock.originalStock - stock.sold) === 0) {
         return true;
