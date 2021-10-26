@@ -166,8 +166,8 @@ const inventory = [
     },
 ];
 // pseudocode: we willen een nieuwe array maken die álle waarden van 1 attribuut van de oorspronkelijke toont, dus: Map methode.
-const output1a_type = inventory.map((name) => {
-    return name.type;
+const output1a_type = inventory.map((typename) => {
+    return typename.type;
 });
 console.log("\n* Opdracht 1a");
 console.log('* TV types: (8 resultaten)',output1a_type);
