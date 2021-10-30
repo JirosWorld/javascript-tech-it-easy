@@ -1,6 +1,29 @@
 // Opdracht 5a: Zorg ervoor dat er een string wordt gegenereerd voor de naam van een tv. Maak een functie die één enkel tv-object (zoals inventory[0] of inventory[6]) verwacht en de naam op de volgende manier samenvoegt: [merk] [type] - [naam] zoals Philips 43PUS6504/12 - 4K TV of NIKKEI NH3216SMART - HD smart TV. Test of jouw functie ook werkt wanneer er een ander tv object wordt meegegeven.
 //
 
+// Maak/open een functie met parameter 'objectKey' waarmee je elke key/attribuut uit het TV object kunt invullen
+function brandList(objectKey) {
+// het resultaat van de Map methode stop ik in een variabele 'output_brand_list2'
+
+    const output_brand_list2 = inventory.map((objectKey) => {
+        return objectKey.brand + objectKey.name + objectKey.type + objectKey.smartTv + objectKey.price;
+    });
+    console.log('* alle values van de key:',output_brand_list2);
+
+// pseudocode: maak eerst tags in het HTML bestand, waarvan 1 een ID='interactie' heeft
+// dit wordt een 'node'
+    const brandlistOutputNode = document.getElementById("interactie");
+//zet elke merknaam in een <li> element. Zorg daarna dat deze in de juiste node komt met appendChild
+    output_brand_list2.forEach(brandValue => {
+        let newBrandItem = document.createElement('li');
+        newBrandItem.textContent = brandValue;
+        brandlistOutputNode.appendChild(newBrandItem);
+    })
+}
+
+// roep de normale functie aan
+brandList();
+
 // Opdracht 5b: Zorg ervoor dat de prijs van een tv netjes geformat wordt. Maak een functie die één tv-prijs als parameter verwacht (zoals 379) en daar de volgende string van maakt: €379,-. Test of jouw functie ook werkt wanneer er een andere tv-prijs wordt meegegeven.
 //
 
