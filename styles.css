@@ -1,10 +1,10 @@
 body {
     font-family: sans-serif;
 }
-#totalsold, #total-sold {
+#totalsold {
     color: green;
 }
-#boughtstock, #bought-stock {
+#boughtstock {
     color: blue;
 }
 #remains {
