@@ -216,14 +216,16 @@ console.log(availableSizeValues(7));
 // Opdracht 5d: Zorg ervoor de informatie van één van de tv's zoals het voorbeeld wordt weergegeven op de pagina. Gebruik hiervoor de functies die je hebt gemaakt in opdracht 5a, 5b en 5c.
 //
 
-// Jiro: omdat ik er niet uitkom, maak ik nu alleen die onderdelen die wél lukken:
-// met alleen de waarde van TV met index=1
-
-
+/*
+* Jiro: omdat ik er niet uitkom, maak ik nu alleen die onderdelen die wél lukken:
+* met alleen de waarde van TV met index=1
+*/
 
 // Opdracht 5e: Schrijf een functie die ALLE tv's weergeeft op de pagina zoals in het voorbeeld. Dit wil je natuurlijk niet acht keer opnieuw schrijven, want nu zijn het 8 tv's, maar in de toekomst misschien wel 200! Gebruik in deze functie de voorgaande functies die je hebt geschreven, om onderdelen van de data te formatten. De overkoepelende "tv-generator-functie" verwacht één parameter: de volledige array met tv-objecten. Vergeet 'm niet aan te roepen!
 
-// Jiro: deze is niet goed, ik kom er nog niet uit
+/*
+* Jiro: deze is niet goed, ik kom er nog niet uit
+*/
 
 function allScreenSizes() {
     const screenSizes = inventory.map((screenSize) => {
