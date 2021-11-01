@@ -14,7 +14,7 @@ function brandList(objectKey) {
 
 // pseudocode: maak eerst tags in het HTML bestand, waarvan 1 een ID='brandlistOutput' heeft
 // dit wordt een 'node'
-    const brandlistOutputNode = document.getElementById("brandlistOutput");
+    const brandlistOutputNode = document.getElementById("brandlist-output");
 //zet elke merknaam in een <li> element. Zorg daarna dat deze in de juiste node komt met appendChild
     output_brand_list2.forEach(brandValue => {
         let newBrandItem = document.createElement('li');
