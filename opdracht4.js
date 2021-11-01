@@ -2,11 +2,14 @@
 
 // Opdracht 4 (was 4b): Schrijf de code uit 3 (was: 4a) om naar een functie die een array met tv-objecten verwacht. Het is handig om onze scripts als functies op te zetten, zodat we ze gemakkelijk kunnen hergebruiken. Tip: vergeet deze functie -declaratie niet aan te roepen!
 
+console.log("\n* Opdracht 4");
 
-// Maak/open een functie met parameter 'objectKey' waarmee je elke key/attribuut uit het TV object kunt invullen
+/*
+ * ik weet niet hoe ik een parameter mee kan geven die echt de uitkomst beinvloedt
+ * dus deze oplossing is waarschijnlijk maar half goed
+ */
 function brandList(objectKey) {
 // het resultaat van de Map methode stop ik in een variabele 'output_brand_list2'
-
     const output_brand_list2 = inventory.map((objectKey) => {
         return objectKey.brand;
     });
@@ -23,5 +26,5 @@ function brandList(objectKey) {
     })
 }
 
-// roep de normale functie aan
+// roep de functie aan met of zonder argument
 brandList();

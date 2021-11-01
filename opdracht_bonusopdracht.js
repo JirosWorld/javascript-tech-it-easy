@@ -1,12 +1,11 @@
+// pseudocode: de voorraad staat in het Main JS bestand.
+
 // Maak drie knoppen op de pagina: Sorteer op prijs, AmbiLight TV's en Uitverkochte exemplaren. Gebruik de code die je in opdracht 2b, 2c en 2d hebt gemaakt en schrijf dit om naar functies zodat je ze kunt aanroepen op het moment dat de buttons geklikt worden. Zorg ervoor dat de functies de uitkomsten in de de console loggen als de gebruiker op de bijbehorende knop klikt. Tip: lees hiervoor paragraaf 7.4 op EdHub eens door!
 
+console.log("\n* Bonus opdracht:");
 // pseudocode: Sorteer op prijs: functie maken van Sort methode
 
 function sortPrices(){
-    // eerst Map
-    // const output_price = inventory.map((oneprice) => {
-    //     return oneprice.brand;
-    // });
 // let op: hier komt een lijst van 'hele' objecten uit met alle eigenschappen
     const sorted_by_price = inventory.sort(function sorting(a, b)  {
         if (a.price > b.price) {
@@ -18,26 +17,21 @@ function sortPrices(){
         return 0;
     })
     console.log("* Gesorteerd van laag naar hoog (709 is hoogste):",inventory);
-    return sorted_by_price;
-    // const AllPrices = inventory.map((oneprice) => {
-    // return "€" + oneprice.price  + ",-";
-    // });
-    // console.log(AllPrices);
-}
-const prices_Dashboard = document.getElementById("bonus");
-console.log(prices_Dashboard);
+    // return sorted_by_price;
+    const prices_Dashboard = document.getElementById("bonus");
+    console.log(prices_Dashboard);
 //zet elke prijs in een <li> element
-sortPrices.forEach(oneprice => {
-    let priceItem = document.createElement('li');
-    priceItem.textContent = oneprice;
-    prices_Dashboard.appendChild(priceItem);
-})
-
+    sorted_by_price.forEach(oneprice => {
+        let priceItem = document.createElement('li');
+        priceItem.textContent = oneprice;
+        prices_Dashboard.appendChild(priceItem);
+    })
 // sla de referentie naar het button-element op
-const buttonElement1 = document.getElementById('prices-button');
-
+    const buttonElement1 = document.getElementById('prices-button');
 // plaats er een event listener op zodat wanneer deze getriggerd wordt, deze functie uitgevoerd wordt
-buttonElement1.addEventListener('click', sortPrices);
+    buttonElement1.addEventListener('click', sortPrices);
+}
+
 
 
 
