@@ -17,8 +17,7 @@
     <p>2c + 2d) Aantal ingekochte voorraad is: <span id="boughtstock">$</span></p>
     <p>2e) <span id="remains">$</span></p>
     <h2>Opdracht 3</h2>
-    <p>Alle TV merken, automatisch op alfabetische volgorde:</p>
-        <div id="brandlist">$</div>
+    <p>Alle TV merken, automatisch op alfabetische volgorde:<span id="brandlist"><!-- Ongebruikt, zie comment in opdracht3.JS --></span></p>
     <h2>Opdracht 4</h2>
     <p>Alle TV merken in een functie:</p>
         <ol id="brandlist-output"></ol>
@@ -29,9 +28,12 @@
     <ul id="interactie"></ul>
     <h2>Bonus opdracht</h2>
     <p>Filter met knop:</p>
-    <ul id="bonus"><button type="button" value="get prices" name="prices-button" id="prices-button">Sorteer op prijs</button>
-     | <button type="button" value="get Ambilight" name="Ambilight-button" id="Ambilight-button">Sorteer op Ambilight</button>
-    | <button type="button" value="get stock" name="stock-button" id="stock-button">Sorteer op uitverkocht</button></ul>
+    <div class="blue-area">
+        <button type="button" value="get prices" name="prices-button" id="prices-button">Sorteer op prijs</button>
+     :: <button type="button" value="get ambilight" name="ambilight-button" id="ambilight-button">Filter op Ambilight</button>
+    :: <button type="button" value="get stock" name="stock-button" id="stock-button">Filter op uitverkocht</button>
+        <ul id="bonus"></ul>
+    </div>
 
     <script src="main.js"></script>
     <script src="opdracht1.js"></script>

@@ -13,9 +13,9 @@ console.log('* TV merken (8 resultaten met dubbele namen):',output_brand);
 // pseudocode: maak eerst tags in het HTML bestand, waarvan 1 een ID='brandlist' heeft
 const brand_Dashboard = document.getElementById("brandlist");
 console.log(brand_Dashboard);
-// om deze variabele te tonen in de HTML, gebruik ik de .textContent methode
-// resulteert in een niet-nette regel, met alle namen achterelkaar:
-brand_Dashboard.textContent = output_brand;
+// om deze variabele te tonen in de HTML, kun je ook de .textContent methode gebruiken, maar...
+// ...dit resulteert in een niet-nette regel, met alle namen achterelkaar:
+// brand_Dashboard.textContent = output_brand;
 
 //kan ook netter door er echt een lijst van te maken:
 //zet elke merknaam in een <p> element. Zorg daarna dat deze in de juiste node komt met appendChild

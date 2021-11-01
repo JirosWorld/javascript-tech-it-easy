@@ -1,166 +1,4 @@
-// VOORRAAD ARRAY MET TV'S
-const inventory = [
-    {
-        type: '43PUS6504/12',
-        name: '4K TV',
-        brand: 'Philips',
-        price: 379,
-        availableSizes: [43, 50, 58, 65],
-        refreshRate: 50,
-        screenType: 'LED',
-        screenQuality: 'Ultra HD/4K',
-        smartTv: true,
-        options: {
-            wifi: true,
-            speech: false,
-            hdr: true,
-            bluetooth: false,
-            ambiLight: false,
-        },
-        originalStock: 23,
-        sold: 2,
-    },
-    {
-        type: 'NH3216SMART',
-        name: 'HD smart TV',
-        brand: 'Nikkei',
-        price: 159,
-        availableSizes: [32],
-        refreshRate: 100,
-        screenType: 'LED',
-        screenQuality: 'HD ready',
-        smartTv: true,
-        options: {
-            wifi: true,
-            speech: false,
-            hdr: false,
-            bluetooth: false,
-            ambiLight: false,
-        },
-        originalStock: 4,
-        sold: 4,
-    },
-    {
-        type: 'QE55Q60T',
-        name: '4K QLED TV',
-        brand: 'Samsung',
-        price: 709,
-        availableSizes: [43, 50, 55, 58, 65],
-        refreshRate: 60,
-        screenType: 'QLED',
-        screenQuality: 'Ultra HD/4K',
-        smartTv: true,
-        options: {
-            wifi: true,
-            speech: true,
-            hdr: true,
-            bluetooth: true,
-            ambiLight: false,
-        },
-        originalStock: 7,
-        sold: 0,
-    },
-    {
-        type: '43HAK6152',
-        name: 'Ultra HD SMART TV',
-        brand: 'Hitachi',
-        price: 349,
-        availableSizes: [43, 50, 55, 58],
-        refreshRate: 60,
-        screenType: 'LCD',
-        screenQuality: 'Ultra HD/4K',
-        smartTv: true,
-        options: {
-            wifi: true,
-            speech: true,
-            hdr: true,
-            bluetooth: true,
-            ambiLight: false,
-        },
-        originalStock: 5,
-        sold: 5,
-    },
-    {
-        type: '50PUS7304/12',
-        name: 'The One 4K TV',
-        brand: 'Philips',
-        price: 479,
-        availableSizes: [43, 50, 55, 58, 65, 70],
-        refreshRate: 50,
-        screenType: 'LED',
-        screenQuality: 'Ultra HD/4K',
-        smartTv: true,
-        options: {
-            wifi: true,
-            speech: true,
-            hdr: true,
-            bluetooth: true,
-            ambiLight: true,
-        },
-        originalStock: 8,
-        sold: 3,
-    },
-    {
-        type: '55PUS7805',
-        name: '4K LED TV',
-        brand: 'Philips',
-        price: 689,
-        availableSizes: [55],
-        refreshRate: 100,
-        screenType: 'LED',
-        screenQuality: 'Ultra HD/4K',
-        smartTv: true,
-        options: {
-            wifi: true,
-            speech: false,
-            hdr: true,
-            bluetooth: false,
-            ambiLight: true,
-        },
-        originalStock: 6,
-        sold: 3,
-    },
-    {
-        type: 'B2450HD',
-        name: 'LED TV',
-        brand: 'Brandt',
-        price: 109,
-        availableSizes: [24],
-        refreshRate: 60,
-        screenType: 'LED',
-        screenQuality: 'Full HD',
-        smartTv: false,
-        options: {
-            wifi: false,
-            speech: false,
-            hdr: false,
-            bluetooth: false,
-            ambiLight: false,
-        },
-        originalStock: 10,
-        sold: 8,
-    },
-    {
-        type: '32WL1A63DG',
-        name: 'HD TV',
-        brand: 'Toshiba',
-        price: 161,
-        availableSizes: [32],
-        refreshRate: 50,
-        screenType: 'LED',
-        screenQuality: 'Full HD',
-        smartTv: false,
-        options: {
-            wifi: false,
-            speech: false,
-            hdr: true,
-            bluetooth: false,
-            ambiLight: false,
-        },
-        originalStock: 10,
-        sold: 8,
-    },
-];
+// pseudocode: de voorraad staat in het Main JS bestand.
 
 // Opdracht 5a: Zorg ervoor dat er een string wordt gegenereerd voor de naam van een tv. Maak een functie die één enkel tv-object (zoals inventory[0] of inventory[6]) verwacht en de naam op de volgende manier samenvoegt: [merk] [type] - [naam] zoals Philips 43PUS6504/12 - 4K TV of NIKKEI NH3216SMART - HD smart TV. Test of jouw functie ook werkt wanneer er een ander tv object wordt meegegeven.
 //
@@ -177,7 +15,7 @@ console.log(TVoutputString(7));
 
 // Opdracht 5b: Zorg ervoor dat de prijs van een tv netjes geformat wordt. Maak een functie die één tv-prijs als parameter verwacht (zoals 379) en daar de volgende string van maakt: €379,-. Test of jouw functie ook werkt wanneer er een andere tv-prijs wordt meegegeven.
 // pseudocode: return "€" + priceValue + ",-";
-// ik intepreteer deze opdracht al een simpele formule, zonder object
+// ik interpreteer deze opdracht als een simpele formule, zonder object
 // dus dit hoeft volgens mij NIET:
 // const AllPrices = inventory.map((oneprice) => {
 //     return "€" + oneprice.price  + ",-";
@@ -201,7 +39,12 @@ console.log(formatPrice(33.33));
 // Jiro: Hier kom ik niet uit want het lukt me niet om 1 uitkomst te pakken als er meerdere sizes zijn
 
 function availableSizeValues(index) {
-    return ( "Beschikbare groottes (inch/cm): " + (inventory[index].availableSizes) + " inch (" + ((inventory[index].availableSizes) * 2.54) + " cm). | ");
+    let availableSizeOutput = inventory[index].availableSizes;
+    if (availableSizeOutput.length > 1) {
+        availableSizeOutput = inventory[index].availableSizes + " | ";
+    }
+    const resolution = ( "Beschikbare groottes (inch/cm): " + (availableSizeOutput) + " inch (" + ((availableSizeOutput) * 2.54) + " cm).");
+    return resolution;
 }
 // aanroepen, werkt alleen bij 1 resultaat:
 console.log(availableSizeValues(0));
