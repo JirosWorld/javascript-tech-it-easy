@@ -1,5 +1,6 @@
 body {
     font-family: sans-serif;
+    padding-bottom: 3em;
 }
 #totalsold {
     color: green;
@@ -15,4 +16,18 @@ body {
     padding: 20px;
     background-color: #e9f3f7;
     border: 5px solid #DCEEEE;
+}
+button {
+    padding: 0.8em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.back-yellow {
+    background-color: rgba(255, 255, 153, 0.5);
+}
+.back-green {
+    background-color: rgba(204, 255, 204, 0.5);
+}
+.back-pink {
+    background-color: rgba(255, 204, 255, 0.5);
 }

@@ -2,41 +2,62 @@
 
 // Maak drie knoppen op de pagina: Sorteer op prijs, AmbiLight TV's en Uitverkochte exemplaren. Gebruik de code die je in opdracht 2b, 2c en 2d hebt gemaakt en schrijf dit om naar functies zodat je ze kunt aanroepen op het moment dat de buttons geklikt worden. Zorg ervoor dat de functies de uitkomsten in de de console loggen als de gebruiker op de bijbehorende knop klikt. Tip: lees hiervoor paragraaf 7.4 op EdHub eens door!
 
-console.log("\n* Bonus opdracht:");
+console.log("\n* Bonus opdracht: Knop 1");
+
 // pseudocode: Sorteer op prijs: functie maken van Sort methode
 
-function sortPrices(){
+function sortPrices() {
 // let op: hier komt een lijst van 'hele' objecten uit met alle eigenschappen
-    const sorted_by_price = inventory.sort(function sorting(a, b)  {
+    const sorted_by_price = inventory.sort(function sorting(a, b) {
         if (a.price > b.price) {
             return 1;
         }
-        if (a.price <  b.price) {
+        if (a.price < b.price) {
             return -1;
         }
         return 0;
     })
-    console.log("* Gesorteerd van laag naar hoog (709 is hoogste):",inventory);
-    // return sorted_by_price;
-    const prices_Dashboard = document.getElementById("bonus");
-    console.log(prices_Dashboard);
-//zet elke prijs in een <li> element
-    sorted_by_price.forEach(oneprice => {
-        let priceItem = document.createElement('li');
-        priceItem.textContent = oneprice;
-        prices_Dashboard.appendChild(priceItem);
-    })
-// sla de referentie naar het button-element op
-    const buttonElement1 = document.getElementById('prices-button');
-// plaats er een event listener op zodat wanneer deze getriggerd wordt, deze functie uitgevoerd wordt
-    buttonElement1.addEventListener('click', sortPrices);
+    // checken wat er in de array zit en in welke volgorde:
+    console.log("Array gesorteerd op prijs:",sorted_by_price);
+    // een object kan niet geprint worden, dus stringify methode
+    // dit is niet juist maar ik weet niet hoe ik een object kan printen
+    priceString = JSON.stringify(sorted_by_price, null, 4);
+    // node maken
+    document.getElementById("bonus").innerHTML = priceString;
+    document.getElementById("bonus").setAttribute("class", "back-yellow");
 }
+// eventlistener maken
+// sla de referentie naar het button-element op
+const buttonElement1 = document.getElementById('prices-button');
+// plaats er een event listener op zodat wanneer deze getriggerd wordt, deze functie uitgevoerd wordt
+buttonElement1.addEventListener('click', sortPrices);
 
 
 
+console.log("\n* Bonus opdracht: Knop 2");
+// Filter op alle AmbiLight toestellen
+function getAmbilight() {
+    const ambilightTVs = inventory.filter((option) => {
+        if ((option.options.ambiLight) === true) {
+            return true;
+        }
+        return false;
+    });
+    // checken wat er in de array zit en in welke volgorde:
+    console.log("Array gefilterd op Ambilight:",ambilightTVs);
+    // dit is niet juist maar ik weet niet hoe ik een object kan printen
+    ambilightString = JSON.stringify(ambilightTVs, null, 4);
+    // node maken
+    document.getElementById("bonus").innerHTML = ambilightString;
+    document.getElementById("bonus").setAttribute("class", "back-green");
+}
+// eventlistener maken
+const buttonElement3 = document.getElementById('ambilight-button');
+buttonElement3.addEventListener('click', getAmbilight);
 
 
 
+console.log("\n* Bonus opdracht: Knop 3");
 // Een array-methode om alle tv's te verzamelen (de hele objecten) die volledig uitverkocht zijn.
 function getSoldOut() {
     const soldOut = inventory.filter((stock) => {
@@ -45,27 +66,14 @@ function getSoldOut() {
         }
         return false;
     });
-    return soldOut;
+    // checken wat er in de array zit en in welke volgorde:
+    console.log("Array gefilterd op uitverkocht:",soldOut);
+    // dit is niet juist maar ik weet niet hoe ik een object kan printen
+    soldOutString = JSON.stringify(soldOut, null, 4);
+    // node maken
+    document.getElementById("bonus").innerHTML = soldOutString;
+    document.getElementById("bonus").setAttribute("class", "back-pink");
 }
-console.log('* Uitverkochte toestellen (2 resultaten):',soldOut);
-// sla de referentie naar het button-element op
+// eventlistener maken
 const buttonElement2 = document.getElementById('stock-button');
-
-// plaats er een event listener op zodat wanneer deze getriggerd wordt, deze functie uitgevoerd wordt
 buttonElement2.addEventListener('click', getSoldOut);
-
-// Filter op alle AmbiLight toestellen
-function getAmbilight() {
-    const output1c = inventory.filter((option) => {
-        if ((option.options.ambiLight) === true) {
-            return true;
-        }
-        return false;
-    });
-    console.log("\n* Opdracht 1c");
-    console.log('* Toestellen met AmbiLight (2 resultaten):',output1c);
-}
-// sla de referentie naar het button-element op
-const buttonElement3 = document.getElementById('ambilight-button');
-// plaats er een event listener op zodat wanneer deze getriggerd wordt, deze functie uitgevoerd wordt
-buttonElement3.addEventListener('click', getAmbilight);
